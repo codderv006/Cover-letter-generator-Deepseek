@@ -23,14 +23,6 @@ export async function generateCoverLetter(jd, skills) {
   });
 
   const data = await res.json();
-
-  // AI returns something like:
-  // Subject: Application for Data Analytics Position
-  //
-  // Dear Hiring Manager, ...
-  //
-  // ...
-
   return data.choices[0]?.message?.content || "Failed to generate content.";
 }
 
